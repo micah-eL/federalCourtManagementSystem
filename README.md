@@ -7,6 +7,7 @@ The database SQL dump file is titled “crms_dump.sql”.
 =======================================================================
 
 Some video demos of the web application:
+
 	The implementation demo is uploaded to youtube and accessible at this link:
 		https://www.youtube.com/watch?v=vKqMUU5zURs
 
