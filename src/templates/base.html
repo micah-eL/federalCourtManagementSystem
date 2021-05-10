@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <div class="header">
+            <div class="title">
+                <div class="side_title left_text"> &nbsp; CMPT354 Project</div>
+                <div class="center_title">Court Registry Management System</div>
+                <div class="side_title right_text">Canada &nbsp; &nbsp;</div>
+            </div>
+            <div class="mainFunctions">
+                <div class="row_100p">
+                    <div class="base_btn_container_top">
+                        <div onclick="location.href='/'" class="buttonStyle row_80p">
+                            Home
+                        </div>        
+                    </div>
+                    <div class="base_btn_container_top">
+                        <div onclick="location.href='/view/choose/'" class="buttonStyle row_80p">
+                            View
+                        </div>        
+                    </div>
+                    <div class="base_btn_container_bottom">
+                        <div onclick="location.href='/create/choose/0'" class="buttonStyle row_80p">
+                            Create
+                        </div>
+                    </div>
+                    <div class="base_btn_container_bottom">
+                        <div onclick="location.href='/update/choose/0/0'" class="buttonStyle row_80p">
+                            Update
+                        </div>
+                    </div>
+                    <div class="base_btn_container_bottom">
+                        <div onclick="location.href='/delete/choose/0/0'" class="buttonStyle row_80p">
+                            Delete
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            
+            
+        </div>
+        {% block body %}{% endblock %}
+    </body>
+</html>

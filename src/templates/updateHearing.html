@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Update Hearing</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="content_title">Update Hearing:</div>
+    <form action="/update/Hearing/{{ case }}/{{ id }}" method="post">
+        <label for="id">Hearing Location:</label>
+        <select id="id" name="id">
+            {% for loc in locations %}
+                <option value="{{ loc[0], loc[1] }}">{{ loc[0], loc[1], loc[2] }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}

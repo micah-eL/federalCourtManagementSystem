@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Create Witness</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="content_title">Create new witness:</div>
+    <form action="/create/Witness/{{ case }}" method="post">
+        <label for="sin">SIN of Witness:</label>
+        <input type="text" id="sin" name="sin" pattern="[0-9]{9}" required><br>
+        <label for="name">Name of Witness:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="phone">Phone Number of Witness:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+        <label for="address">Address of Witness:</label>
+        <input type="text" id="address" name="address" required><br>
+        <label for="email">Email of Witness:</label>
+        <input type="text" id="email" name="email" required><br>
+        <input type="submit" value="Create">
+    </form>
+</div>
+{% endblock %}

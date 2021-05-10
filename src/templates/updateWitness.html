@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Update Witness</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="content_title">Update Witness</div>
+    <form action="/update/Witness/{{ case }}/{{ id }}" method="post">
+        <label for="name">Witness Name:</label>
+        <input type="text" id="name" name="name" value="{{ witness[0] }}" required><br>
+        <label for="phone">Phone Number of Witness:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{ witness[1] }}" required><br>
+        <label for="address">Witness Address:</label>
+        <input type="text" id="address" name="address" value="{{ witness[2] }}" required><br>
+        <label for="email">Witness Email:</label>
+        <input type="text" id="email" name="email" value="{{ witness[3] }}" required><br>
+        <input type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}

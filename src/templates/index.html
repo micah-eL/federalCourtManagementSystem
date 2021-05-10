@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>View Cases</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="content_title">Case list</div>
+    <form action="/" method="post">
+        <label for="registry_officer">View cases by registry officer:</label>
+        <select id="registry_officer" name="registry_officer">
+            <option value="all">All cases</option>
+            {% for ro in registry_officers %}
+                <option value="{{ ro[0] }}">{{ ro[1] }}</option>
+            {% endfor %}
+        </select>
+        <label for="outcome">View cases by outcome:</label>
+        <select id="outcome" name="outcome">
+            <option value="all">All Outcomes</option>
+            {% for outcome in outcomes %}
+                <option value="{{ outcome }}">{{ outcome }}</option>
+            {% endfor %}
+        </select>
+        <input class="buttonStyle-submit" type="submit" value="Submit">
+        
+    </form>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Case number</th>
+                <th>Judge</th>
+                <th>Registry Officer</th>
+                <th>Court</th>
+                <th>Outcome</th>
+                <th>Documents</th>
+                <th>Actions</th>
+            </tr>
+            {% for case in cases %}
+                <tr>
+                    <td>{{ case[0] }}</td>
+                    <td>{{ case[1] }}</td>
+                    <td>{{ case[2] }}</td>
+                    <td>{{ case[3] }}</td>
+                    <td>{{ case[4] }}</td>
+                    <td>{{ case[5] }}</td>
+                    <td>
+                        <div class="table_btn_container">
+                            <div class="buttonStyle-table">
+                                <a href="/update/Case/{{ case[0] }}/{{ case[0] }}">View</a>
+                            </div>        
+                        </div>
+                        <br>
+                        <div class="table_btn_container">
+                            <div class="buttonStyle-table">
+                                <a href="/delete/Case/{{ case[0] }}/{{ case[0] }}">Delete</a>
+                            </div>        
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

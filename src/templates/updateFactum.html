@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Update Factum</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="content_title">Update Factum:</div>
+    <form action="/update/Factum/{{ case }}/{{ id }}" method="post">
+        <label for="submitterName">Submitter name:</label>
+        <input type="text" id="submitterName" name="submitterName" value="{{ factum[0] }}" required><br>
+        <label for="dateSubmitted">Date of submission:</label>
+        <input type="date" id="dateSubmitted" name="dateSubmitted" value="{{ factum[1] }}" required><br>
+        <label for="linkToDoc">Link to Document:</label>
+        <input type="text" id="linkToDoc" name="linkToDoc" value="{{ factum[2] }}" required><br>
+        <label for="releventMotion">relevent Motion:</label>
+        <input type="text" id="releventMotion" name="releventMotion" value="{{ factum[3] }}" required><br>
+        <label for="deadline">Deadline for submission:</label>
+        <input type="date" id="deadline" name="deadline" value="{{ factum[4] }}" required><br>
+        <input type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}

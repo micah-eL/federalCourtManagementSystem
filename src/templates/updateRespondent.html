@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Update Respondent</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <div class="content_title">Update Respondent</div>
+    <form action="/update/Respondent/{{ case }}/{{ id }}" method="post">
+        <label for="respondentName">Respondent Name:</label>
+        <input type="text" id="respondentName" name="respondentName" value="{{ respondent[0] }}" required><br>
+        <label for="phone">Phone Number of Respondent:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{ respondent[1] }}" required><br>
+        <label for="address">Respondent Address:</label>
+        <input type="text" id="address" name="address" value="{{ respondent[2] }}" required><br>
+        <label for="respondentEmail">Respondent Email:</label>
+        <input type="text" id="respondentEmail" name="respondentEmail" value="{{ respondent[3] }}" required><br>
+        <label for="barristerName">Barrister Name:</label>
+        <input type="text" id="barristerName" name="barristerName" value="{{ respondent[4] }}" required><br>
+        <label for="barristerEmail">Barrister Email:</label>
+        <input type="email" id="barristerEmail" name="barristerEmail" value="{{ respondent[5] }}" required><br>
+        <input type="submit" value="Update">
+    </form>
+</div>
+{% endblock %}
